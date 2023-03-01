@@ -1,0 +1,128 @@
+html{
+    font-size: 62.5%;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    background-color: tomato;
+    padding:6vw 3vw;
+}
+.title h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(2.5vw + 1.9rem);
+    font-weight: 400;
+    color: white;
+}
+.title h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(1.3vw + 1rem);
+    font-weight: 400;
+    color: white;
+
+}
+.body{
+    width: 100%;
+    padding: 3vw;
+}
+.body h3{
+    color: tomato;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(2.5vw + 1.2rem);
+    font-weight: 400;
+    text-align: center;
+}
+.ourway-content{
+    padding:6vw;
+}
+.sec1{
+padding: 2vw ;
+display: flex;
+align-items: center;
+column-gap: 6vw;
+flex-direction: row;
+}
+.sec1-active{
+    animation: left-heading 1.5s;
+
+}
+.sec1 img{
+height: calc(20vw + 8rem);
+width: calc(28vw + 9rem);
+padding:0 1vw ;
+object-fit: cover;
+}
+.order2{
+    order: 2;
+}
+
+.heading{
+padding: 0 3vw;
+}
+.sec1:nth-of-type(even) > .heading{
+    order: 1;
+}
+
+
+@keyframes left-heading{
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.heading h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(2.3vw + 1.2rem);
+    font-weight: 500;
+    padding-bottom: 1.5vw;
+}
+.heading p{
+    font-size: calc(1.3vw + 1rem);
+    font-weight: 400;
+    color: rgb(92, 92, 92);
+}
+@media (max-width:1000px){
+    .ourway-content{
+        padding: 4vw;
+    }
+    .heading{
+        padding: 0;
+    }
+    .heading p,.sec1 .heading p{
+        width: 40vw;
+
+    }
+     
+}
+@media (max-width:650px){
+    
+    .sec1{
+        margin-top: 3rem;
+        flex-direction: column;
+    }
+    .sec1 .heading{
+        order: 1;
+    }
+    .heading{
+        padding: 5vw 9vw;
+
+        flex-direction: column;
+        row-gap: 5vw;
+        /* padding-bottom: 6vw; */
+    }
+    .heading p,.sec1 .heading p{
+        width: 100%;
+
+    }
+    
+    .sec1 img{
+        order: 2;
+        height: 55vw;
+        width: 65vw;
+    }
+}
+
+

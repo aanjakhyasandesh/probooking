@@ -1,0 +1,360 @@
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHELUM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/headernav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/update.css'%}">
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}">
+    <link rel="stylesheet" href="{%static 'css/preloader1.css'%}">
+    <link rel="stylesheet" href="{%static 'css/new.css'%}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+</head>
+<body onload="myFunction()">
+    <div class="preloader" id="preloader">
+        <div class="spinner">
+            
+        </div>
+    </div>
+    {%include 'nav.html'%}
+    <div class="slider-root">
+    <!-- <div class="slider-image" style="background-image: url('../image/slider1.jpg');"> -->
+        {% for homes in home%}
+        <div class="slider-image">
+            <img src="{{homes.slider.url}}" alt="">
+                <div class="slider-transparent">
+                    <!-- <h3>{{homes.slider_title}}</h3>
+                    <p>{{homes.landing_description1}}
+                    </p> -->
+                    
+                
+         
+        </div>
+    </div>
+   {% endfor %}
+   <!-- <div class="dot"> 
+    <a href="#"> 
+        <svg class="dot-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+
+    <path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+        C29.106,6.562,22.55,0,14.554,0z"/>
+
+    </svg></a>
+    <a href="#"> 
+    <svg class="dot-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+
+<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+    C29.106,6.562,22.55,0,14.554,0z"/>
+
+</svg></a>
+<a href="#"> 
+    <svg class="dot-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+
+<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+    C29.106,6.562,22.55,0,14.554,0z"/>
+
+</svg></a>
+    <a href="#"> 
+        <svg class="dot-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+
+    <path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+        C29.106,6.562,22.55,0,14.554,0z"/>
+
+    </svg></a>
+</div> -->
+</div>
+   <!-- <div class="feature">
+        <h2>{{feature_title}}</h2>
+        <div class="feature-detail">
+            <p>{{feature_type1}}</p> 
+            <p>{{feature_type2}}</p> 
+            <p>{{feature_type3}}</p> 
+        </div>
+</div> -->
+{%include 'new.html'%}
+ 
+<div class="mid-content">  
+    <img src="{{whyus_bg.url}}" alt="">  
+    <div class="image-content">
+    <h3>{{whyus_title}}</h3>
+    <p>{{whyus_description}}</p>
+ </div>
+</div>
+
+<div class="quick-shop">
+<div class="shop">
+   <h2>Quick Booking</h2>
+   <div class="boxes">
+        <div class="box">
+            <h3>Futsal</h3>
+            <img class="clothes" src="../image/futsal.jpeg" alt="">
+        </div>
+        <div class="box">
+            <h3>Basketball</h3>
+            <img class="clothes" src="../image/basketball.jfif" alt="">
+        </div>
+        <div class="box">
+            <h3>Futsal</h3>
+            <img class="clothes" src="../image/futsal.jpeg" alt="">
+        </div>
+    </div>
+    <div class="link">
+        <a href="/shop">View all </a>
+        <svg class="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+       
+           <path d="M508.875,248.458l-160-160c-4.167-4.167-10.917-4.167-15.083,0c-4.167,4.167-4.167,10.917,0,15.083l141.792,141.792
+               H10.667C4.771,245.333,0,250.104,0,256s4.771,10.667,10.667,10.667h464.917L333.792,408.458c-4.167,4.167-4.167,10.917,0,15.083
+               c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125l160-160C513.042,259.375,513.042,252.625,508.875,248.458z
+               "/>
+           </svg>
+        </div>
+    </div>
+    </div>
+    <div class="knitting">
+        <img src="{{knitting_background.url}}" alt="">
+        <div class="knitting-content">
+            <h3>{{knitting_title}}</h3>
+            <div class="knitting-detail">
+                <p>{{knitting_description}}</p>
+                <img src="{{knitting_image.url}}" alt="">
+            </div>
+        </div>
+    </div>
+
+     <div class="notify">
+        <img src="{{notified_bg.url}}" alt="">
+        
+        <div class="notify-content">
+            <h3>{{heading}}</h3>
+            <input class="inputbox" type="text" placeholder="Enter your email address." >
+            <button class="inputbutton">SUBSCRIBE</button>
+            <p>{{description}} </p>
+        </div>
+    </div>
+    <div class="testimonial">
+        <h3>PEOPLE SAYS</h3>
+        <h1>Testimonials</h1>
+        <div class="testimonial-slide">
+            
+            <!-- {% for testomonials in testomonial %} -->
+        <img class="testimonial-pic" src="{{testomonials.image.url}}" alt="">
+        
+       
+       
+    </div>
+        <p>{{testomonials.description}}</p>
+        <h4>{{testomonials.name}}</h4>
+        <!-- {% endfor %} -->
+        <!-- <div class="dot1"> 
+            <a href="#"> <svg class="dot-svg1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+<g>
+	<g id="c147_full_moon">
+		<g>
+			<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+				C29.106,6.562,22.55,0,14.554,0z"/>
+		</g>
+	</g>
+	<g id="Capa_1_14_">
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+            </svg></a>
+            <a href="#"><svg class="dot-svg1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+<g>
+	<g id="c147_full_moon">
+		<g>
+			<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+				C29.106,6.562,22.55,0,14.554,0z"/>
+		</g>
+	</g>
+	<g id="Capa_1_14_">
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+            </svg></a>
+            <a href="#"> <svg class="dot-svg1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+<g>
+	<g id="c147_full_moon">
+		<g>
+			<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+				C29.106,6.562,22.55,0,14.554,0z"/>
+		</g>
+	</g>
+	<g id="Capa_1_14_">
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+            </svg></a>
+            <a href="#"><svg class="dot-svg1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve">
+<g>
+	<g id="c147_full_moon">
+		<g>
+			<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555
+				C29.106,6.562,22.55,0,14.554,0z"/>
+		</g>
+	</g>
+	<g id="Capa_1_14_">
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+            </svg></a>
+        </div> -->
+    </div>
+<!-- <div class="map-integration map" datalong="27.6981-85.3592" id="map"> -->
+    {% for i in map%}
+<div class="map-integration map" datalong="{{i.latitude}}-{{i.longitude}}" id="map">
+    {% endfor %}
+    <div class="map-transparent" onclick="zoomenable()">
+        <h1>Click to Drag around</h1>
+    </div>
+</div>
+    {%include 'footer.html'%}
+    <script src="{%static 'js/slider.js' %}"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+<script src="{%static 'js/branch.js'%}"></script>
+<script>
+    var preload=document.getElementsByClassName('preloader')[0];
+    function myFunction(){
+        preload.style.display='none'; 
+    }
+</script>
+</body>
+</html>
+
+
+

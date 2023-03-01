@@ -1,0 +1,132 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/story.css'%}">
+    <link rel="stylesheet" href="{% static 'css/headernav.css' %}">
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}">
+
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="bg relative" >
+        <img src="{{storypage_image.url}}" alt="">
+        <div class="transparent relative flex flex-column rowgap-10px align-center justify-center">
+            <h2>{{storypage_title}}</h2>
+            <p>{{storypage_description}}</p>
+            <div class="play-btn flex">
+                <a href="https://www.youtube.com/watch?v=bF3ZJWnSwGs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="ourstory">
+        <h2>{{ourstory}}</h2>
+        <p>{{ourstory_description}}
+        </p>
+        <div class="both-journey flex flex-column">
+                <div class="all-journey flex flex-column">
+                    {% for x in story %}
+                        <div class="journey flex full-width">
+                            <div class="journey-left">
+                                <h3>{{x.story_title}}</h3>
+                                <p> {{x.story_description}} </p>
+                            </div>
+                            <div class="journey-right">
+                                <img src="{{x.story_image.url}}" alt="wooving">
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                    
+                    
+                    </div>
+                    
+            </div>
+        </div>
+        <h4>{{sweet_description}}
+        </h4>
+        
+        
+
+    </div>
+
+    <!-- <div class="empowering relative" style="background: url({%static 'image/story-bg.jpeg' %}) ;"> -->
+        <div class="empowering relative" >
+            <img src="{{empower_background.url}}" alt="">
+        <div class="transparent-white relative flex ">
+            <div class="empowering-text ">
+                <h2>{{empower}}</h2>
+                <p>{{empower_description}} 
+                </p>
+            </div>
+            
+            <div class="all-empowering-img flex ">
+                <div class="empowering-img  flex flex-column ">
+                    <div class="empower-box" >
+                        <img src="{{up_left.url}}" alt="">
+                    </div>
+                    <div class="empower-box" id="em-long">
+                        <img src="{{up_right.url}}" alt="" >
+                    </div>
+                
+                </div>
+                <div class="empowering-img flex flex-column">
+                    <div class="empower-box" id="em-long">
+                        <img src="{{down_left.url}}" alt="" >
+                    </div>
+                    <div class="empower-box">
+                        <img src="{{down_right.url}}" alt="">
+                    </div>
+                    
+                </div>
+            
+        </div>
+        
+
+        
+    </div>
+
+            
+        </div>
+
+    </div>
+    <div class="team-meet">
+        <h2>{{meet_team}}</h2>
+        <p>{{meet_description}}</p>
+        <div class="team-img flex">
+            {%for image in meet_image%}
+            <div class="team-pic">
+                
+                <img src="{{image.meet_team_image.url}}" alt="">
+                <h2>{{image.name}}</h2>
+                <p>{{image.post}}</p>
+                
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    
+    <div class="our-team">
+        <h2 class="h2-left">{{our_team}}</h2>
+        <p>{{team_description}}</p>
+        <div class="all-team grid">
+            {% for image in team_image %}
+                <img src="{{image.team_image.url}}" alt="">
+            {% endfor %}
+            
+        </div>
+    </div>
+    {%include 'footer.html' %}
+    
+</body>
+</html>

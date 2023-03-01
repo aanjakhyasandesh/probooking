@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+h3,h4{
+    font-family: 'Roboto', sans-serif;
+
+}
+html{
+    font-size: 62.5%;
+}
+.grid{
+    display: grid;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction:column;
+}
+.align-center{
+    align-items: center;
+}
+.hide{
+    display: none;
+}
+.justify-center{
+    justify-content: center;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.rowgap-10px{
+    row-gap: 1rem;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.bg{
+    /* height: 100vh; */
+    width: 100%;
+    /* background: url( "../image/story-bg.jpeg"); */
+    
+}
+.bg > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.transparent{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+.transparent h2{
+    font-size: calc(1rem + 2.5vw);
+    
+    letter-spacing: .3rem;
+    font-weight: 600;
+}
+.transparent p{
+    font-weight: 400;
+    font-size: calc(.6rem + 1.5vw);
+
+    letter-spacing: .2rem;
+
+}
+.play-btn{
+    height: 6rem;
+    width: 6rem;
+    background: rgba(255, 255, 255, 0.377);
+  
+    border-radius: 4rem;
+
+}
+.play-btn svg{
+    padding: .5rem;
+    height: 6rem;
+}
+.ourstory{
+    padding:5vw 7vw;
+    text-align: center;
+}
+.ourstory h2,.team-meet h2,.our-team h2{
+    
+    font-size: calc(1.8rem + 2vw);
+
+}
+.ourstory > p{
+    padding: 1.5rem 15vw;
+    font-size: calc(1rem + 1vw);
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+}
+
+.journey{
+    margin: 6rem 0;
+    /* padding: 0 5vw; */
+    column-gap: 5vw;
+    text-align: left;
+}
+.journey h3{
+    padding: 1vw 0;
+    font-size: calc(1rem + 1.5vw);
+}
+.journey p,.team-meet p,.our-team p{
+    font-size: calc(.7rem + 1.2vw);
+    line-height: 1.3;
+    margin-top: .8rem;
+    font-weight: 500;
+    overflow-y: hidden;
+
+}
+.journey-right img{
+    
+    height: calc(3rem + 20vw);
+    width: calc(2rem + 25vw);
+    border-radius: 2rem;
+    object-fit: cover;
+}
+.journey-left{
+    padding:1vw 0;
+}
+.journey:nth-child(even) > .journey-left{
+    /* float: left; */
+    order: 2;
+}
+.order2{
+    order: 2;
+}
+.ourstory > h4{
+    padding: 0 15vw;
+    /* text-align: center; */
+    letter-spacing: .2rem;
+    word-spacing: .2rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+    font-size: calc(1rem + 1vw);
+    font-weight: 700;
+}
+
+.empowering{
+    width: 100%;
+}
+.empowering > img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    overflow-y: hidden;
+
+}
+.transparent-white{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.616);
+    padding: 10vw 7vw;
+    column-gap: 7vw;
+}
+
+.empowering-text{
+    width: 45vw;
+    /* padding-right: 10vw; */
+}
+.empowering-text h2{
+    font-size: calc(.5rem + 2.5vw);
+    letter-spacing:.1rem; 
+    font-weight:700;
+    /* padding-top: .2vw; */
+    color: rgb(223, 223, 223);
+}
+.empowering-text p{
+
+    font-family: 'Roboto' serif;
+    margin-top: 2vw;
+    font-size: calc(.9vw + 10px);
+    color: rgb(241, 237, 237);
+    font-weight: 400;
+    line-height: 1.3;
+ 
+}
+.all-empowering-img{
+    flex-wrap: wrap;
+    column-gap: 2vw;
+
+}
+
+.empowering-img{
+    row-gap: 2vw;
+}
+.empower-box{
+    height: calc(14vw + 2rem);
+    width:15vw;
+}
+.empower-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#em-long{
+    height: calc(20vw + .5rem);
+    
+}
+.team-img{
+    flex-wrap: wrap;
+
+    padding: 3rem 0;
+    justify-content: space-evenly;
+    margin-top:3rem;
+    column-gap: 2vw;
+
+    
+}
+
+
+.team-meet,.our-team{
+    text-align: center;
+    padding: calc(3vw + 2rem);
+  
+    background: rgb(240, 247, 253);
+}
+.team-meet{
+    padding: 4vw 7vw;
+}
+
+.team-pic img{
+    height: 15vw;
+    width: 15vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50% 50% 50% 0;
+}
+.team-pic h2{
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    text-align: left;
+}
+.team-pic p{
+    text-align: left;
+    font-size: 1.7rem;
+    color: purple;
+}
+
+.our-team{
+    padding: 4vw;
+    padding-top: 0;
+}
+
+.all-team{
+    margin-top: 4vw;
+    grid-template-columns: repeat(7,1fr);
+    
+}
+
+.all-team img{
+    height: 25rem;
+    width: 13.2vw;
+    object-fit: cover;
+}
+.up-only{
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width:600px) {
+    html{
+        font-size: 50%;
+    }
+    .bg{
+        height: 40vh;
+    }
+    .both-journey{
+        overflow: hidden;
+    }
+    .ourstory{
+        padding:  7vw;
+    }
+    
+    .ourstory > p{
+        padding: 2rem 0;
+        font-size: 1.7rem;
+    }
+    .ourstory > h4 {
+        font-size: 2.1rem;
+        padding: 2.5rem 1rem;
+        margin: 0;
+        /* text-align: left; */
+    }
+    .journey p,.team-meet p,.our-team p{
+        font-size: 2rem;
+    }
+    .journey{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        margin: 0;
+        padding: 2rem 0;
+    }
+    
+    .journey-left{
+        width: 80vw;
+        text-align: left;
+        padding: 1rem 0;
+        order: 2;
+
+    }
+    .journey p{
+        padding: 0;
+        font-size: 1.8rem;
+        /* text-align: left; */
+    }
+    .ourstory h2,.team-meet h2,.our-team h2{
+    font-size: 3.5rem;
+    
+    }
+    .empowering-text h2{
+        font-size: 2.8rem;
+    }
+    .journey h3{
+        font-size: 2.3rem;
+        text-align: left;
+        
+    }
+    .journey-right img{
+        margin:1rem 0;
+        width: 80vw;
+        height: 60vw;
+    }
+    .journey-right{
+        display: flex;
+        justify-content: center;
+        order: 1;
+
+
+    }
+    .all-empowering-img{
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    
+    .empowering-text{
+        width: 100%;
+    }
+    .empowering-text p{
+        margin: 2rem 0;
+        /* padding-right:2vw; */
+        font-size: 2rem;
+    }
+    .transparent-white{
+        padding: 9vw;
+        flex-direction: column;
+        /* justify-content: center; */
+        row-gap: 5vw;
+        /* height: 100%; */
+    }
+    .empower-box{
+        height: 20vh;
+        width: calc(30vw + 3rem);
+
+    }
+    
+    
+    #em-long{
+        height: 25vh;
+    }
+    .team-meet{
+        overflow: hidden;
+    }
+    .team-img{
+        /* align-items: center; */
+        justify-content:flex-start;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+
+    }
+    .team-pic{
+        width: 100vw;
+        margin-top: 3vw;
+    }
+    .team-pic img {
+        height: 25rem;
+        width: 25rem;
+        margin-left: 10vw;
+    }
+    .team-pic h2, .team-pic p{
+        text-align: left;
+        margin-left: 10vw;
+    }
+    .team-pic h2{
+        font-size: 2rem;
+    }
+    
+    .our-team,.both-journey{
+        overflow: hidden;
+    }
+    .all-team{
+        overflow-x: scroll;
+        align-items: center;
+        height: 30rem;
+    }
+    .all-team img{
+        height: 100%;
+        width: 10rem;
+    } 
+    
+}
+@media (max-width:217px){
+    .empower-box{
+        height: 12vh;
+        width: calc(25vw + 3rem);
+
+    }
+}

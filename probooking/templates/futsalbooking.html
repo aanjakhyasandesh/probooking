@@ -1,0 +1,133 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
+</head>
+<body>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-20 mx-auto flex flex-col">
+      <div class="lg:w-4/6 mx-auto">
+        <div class="rounded-lg h-96 overflow-hidden">
+          <img alt="content" class=" object-center h-full w-full" src="https://cdn.openart.ai/stable_diffusion/694c677e93bbe05b1d2c1063e668a715a7288caf_2000x2000.webp">
+        </div>
+        <br>
+            <form action="{% url 'bookingdelete' book.book.id %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              
+        <br>
+            <input type="number"  name="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Your Booking Id to cancel" required>
+            <br>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4">
+              Cancel Booking
+            </button>
+            <a href="{% url 'viewbooking' %}" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4">View Booking</a>
+            
+            
+          </form>
+            </tbody>
+        </table>
+        
+        {% if messages %}
+            {% for message in messages %}
+            <br>
+                <h3 style="font-size: 1.5rem; text-align: center; margin-top: 1.5rem;">{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+        <h1 class="text-3xl text-center mt-10 text-green-800 ">Make Your Booking</h1>
+        
+        <div class="flex flex-col sm:flex-row mt-10">
+          
+          <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+            <form method="POST" enctype="multipart/form-data"> 
+              {% csrf_token %}
+              <input type="number"  name="phones" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Your Phone Number" required>
+              <br>
+            <div class="relative max-w-sm">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+              </div>
+              <input datepicker name="dates"  type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+            </div>
+            <br>
+            <div class="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl">
+              <div class="flex">
+                <select name="hours" class="bg-transparent text-xl appearance-none outline-none">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <span class="text-xl mr-3">:</span>
+                <select name="minutes" class="bg-transparent text-xl appearance-none outline-none mr-4">
+                  <option value="0">00</option>
+                  <!-- <option value="30">30</option> -->
+                </select>
+                <select name="ampm" class="bg-transparent text-xl appearance-none outline-none">
+                  <option value="am">AM</option>
+                  <option value="pm">PM</option>
+                </select>
+              </div>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10">
+              Book
+            </button>
+            <!-- <p name='fid'>{{book.id}}</p> -->
+          </form>
+          </div>
+          
+          <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+            <p class="leading-relaxed text-lg mb-4">
+               {{book.book.booking_description}}
+               {{book.book.id}}
+            </p>
+            <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10">
+              Book
+            </button> -->
+          </div>
+        </div>
+        <br>
+        <h1 class="text-3xl text-center mt-10 text-green-800 ">Give Review</h1>
+        <br>
+        <form action="{% url 'review' %}" method="POST" enctype="multipart/form-data"> 
+          {% csrf_token %}
+          <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 outline-none">
+              
+              <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
+                  <textarea id="editor" name="getreview" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 outline-none dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write Your Review" required></textarea>
+              </div>
+          </div>
+          <button type="submit" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+              Give Review
+          </button>
+          <a href="{% url 'review' %}" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            View Review
+          </a>
+       </form>
+      </div>
+      <form action="{% url 'discoupon' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+          Discount Coupoun
+        </button>
+      </form>
+    </div>
+    
+  </section>
+  
+    
+
+
+</body>
+</html>

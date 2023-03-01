@@ -1,0 +1,49 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our way</title>
+    <link rel="stylesheet" href="{% static 'css/ourway.css' %}">
+    <link rel="stylesheet" href="{% static 'css/headernav.css' %}">
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}">
+
+</head>
+<body>
+    {% include 'nav.html'%}
+    <div class="ourway">
+    <div class="title" >
+        <h1>{{heading}}</h1>
+        <h2>{{title}}</h2>
+    </div>
+    <div class="body">
+        <h3>{{Second_heading}}</h3>
+        
+        
+        <div class="ourway-content">
+            {% for x in des %}
+               
+                
+            <div class="sec1" id='sec1'>
+                <div class="heading ">
+                    <h2>{{x.way_title}}</h2>
+                    <p>{{x.way_description}}</p>                    
+                </div>
+                <div class="sec1-img">
+                <img src="{{x.way_image.url}}" alt="">
+
+                </div>
+            
+            
+            </div>
+
+            {% endfor %}
+            
+        
+    </div>
+</div>
+{%include 'footer.html'%}
+<script src="../static/js/scroll.js"></script>
+</body>
+</html>

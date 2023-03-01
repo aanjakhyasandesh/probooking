@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.preloader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner{
+    width: 60px;
+    height: 60px; 
+    border: 5px solid;
+    color:cadetblue; 
+    border-radius:50%;
+    border-top-color:transparent; 
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0%{
+        color: cadetblue;
+    }
+    25%{
+        color: teal;
+    }
+    50%{
+        color: turquoise;
+
+    }
+    75%{
+        color: darkcyan;
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}

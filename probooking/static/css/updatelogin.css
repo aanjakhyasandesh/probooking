@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.login{
+    padding: 4vw;
+    width: 100%;
+    background: rgba(230, 230, 230, 0.774);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.left-login{
+    width: calc(30vw + 15rem);
+    background: white;
+}
+.left-login img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: calc(20vw + 10rem);
+}   
+.right-login h2{
+    font-size: calc(1vw + 1.5rem);
+    font-weight: bold;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    text-align: center;
+}
+.inputbox{
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    padding: 1vw 3vw;
+    border: none;
+    box-shadow: 0 0 5px 5px, rgba(196, 194, 194, 0.459);   
+}
+input[type=text]{
+    background-image: url(../svg/login.svg);
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+    
+}
+input[type=password]{
+    background-image: url(../svg/padlock.svg);
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}   
+input:not([type="submit"]){
+    background-repeat: no-repeat;
+    background-size: 1.2rem 1.2rem;
+    background-position: 5% 50%;
+    padding: 10px;
+    padding-left: 15%;
+    border-radius:5px ;
+    font-size: calc(.5vw + .7rem);
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid #3737e4;
+
+}
+
+.inputbox label{
+    padding-left: 15px;
+    padding-bottom:5px;
+    font-size: calc(.8vw + .6rem);
+    color: rgb(32, 32, 32);
+    
+}
+.reminder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
+}
+.reminder label{
+    color: rgb(32, 32, 32);
+    font-size: calc(.4vw + .7rem);
+
+}
+
+.forget{
+    font-size: calc(.4vw + .7rem);
+    color: rgb(32, 32, 32);
+    text-align: right;
+    text-decoration: none;
+}
+.submit{
+    padding: 4vw 5vw;
+    text-align: center;
+
+}
+input[type=submit]{
+    color: white;
+    font-size: calc(.7vw + .7rem);
+    text-decoration: none;
+    border: none;
+    z-index: 1;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none; 
+   /* outline: none; */
+    background-color:#3737fcd7;
+    border-radius: 25px;
+    padding: 1vw 8vw ;
+    /* cursor: pointer; */
+}
+.container p{
+    font-size: calc(.5vw + .6rem);
+    text-align: center;
+    padding-top: 3vw;
+}
+.login-svg{
+    display: flex;
+    justify-content: center;
+}
+
+.login-logo{
+    height: calc(2.1vw + 2.5rem);
+    width: calc(2.1vw + 2.5rem);
+    padding: 0 1vw;
+}
+.signup{
+    text-align: center;
+    padding: 2.5vw 0;
+}
+
+.signup a{
+    font-size: calc(.5vw + .7rem);
+    text-decoration: none;
+    
+    color: rgb(78, 15, 196);
+}
+@media (max-width:650px) {
+    .login{
+        /* height: 100vh; */
+    }
+    .left-login{
+        display: none;
+    }
+    .container{
+        width: 300px;
+    }
+    .right-login h2{
+        font-size: calc(1.5vw + 2rem);
+    }
+        .inputbox label{
+        font-size: calc(1vw + 1.3rem);
+    }
+    input:not([type="button"]){
+        padding: 8px ;
+        font-size: calc(.9vw + 1.1rem);
+        padding-left: 15%;
+
+    }
+    .reminder {
+        margin-bottom: 1rem;
+        padding: 0 15px;
+        
+        
+    }
+    .inputbox{
+        margin-bottom: 1rem ;
+        padding: 0 15px;
+    }
+    .forget{
+        font-size:  calc(.6vw + 1.1rem);
+    }
+    .reminder label{
+        font-size: calc(.6vw + 1.1rem);
+    }
+    .submit{
+        padding: 15px 5vw;
+        padding-bottom: 40px;
+    }
+    .submit p{
+        padding-top: 30px;
+        padding-bottom: 10px;
+        font-size: calc(.8vw + .9rem);
+    }
+    input[type=button]{
+    font-size: calc(1vw + 1.2rem);
+    padding: 1.5vw 10vw ;
+    }
+    .login-svg{
+        display: flex;
+        column-gap: 10px;
+    }
+    .login-logo{
+        height: calc(2.1vw + 2.5rem);
+        width: calc(2.1vw + 2.5rem);
+    }
+    .signup a{
+     font-size:  calc(1vw + 1rem);
+      
+    }
+}

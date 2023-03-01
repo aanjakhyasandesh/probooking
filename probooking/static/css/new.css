@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+.team-meet{
+    text-align: center;
+    padding: calc(3vw + 2rem);
+    /* background: rgb(240, 247, 253); */
+}
+.team-meet h2{
+    color: black;
+    font-weight: 400;
+    font-size: calc(1.8rem + 2vw);
+
+}
+.team-img{
+    justify-content: center;
+    margin-top:2rem;
+    column-gap: 5vw;
+
+    
+}
+.team-pic img{
+    height: 20vw;
+    width: 25vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-pic p{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    color:  black;
+}
+
+@media only screen and (max-width:600px) {
+    .team-meet{
+        overflow: hidden;
+    }
+    .team-img{
+        justify-content:flex-start;
+
+        overflow-x: scroll;
+
+    }
+    .team-pic{
+        width: 100vw;
+        margin-top: 3vw;
+    }
+    .team-pic img{
+        height: 15rem;
+        width: 15rem;
+        
+    }
+    .team-pic p{
+        text-align: center;
+    }
+}

@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/comingsoon.css'%}">
+</head>
+<body>
+    
+
+    <header>
+        <div class="center">
+            <h1>Coming Soon</h1>
+            <hr>
+            <div class="time">
+                <p id="days"></p>
+                <p id="hours"></p>
+                <p id="minutes"></p>
+                <p id="seconds"></p>
+            </div>
+            
+        </div>
+        
+    </header>
+    <script>
+        var countDown= new Date('feb 01, 2023 23:59:59').getTime();
+        var x= setInterval(function(){
+            var now=new Date().getTime();
+            var distance =countDown - now;
+            var days=Math.floor(distance / (1000 * 60 * 60 *24));
+            var hours=Math.floor((distance % (1000*60*60*24)) / (1000 * 60 * 60));
+            var minutes=Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+            document.getElementById("days").innerHTML = days + "d";
+            document.getElementById("hours").innerHTML= hours + "h";
+            document.getElementById("minutes").innerHTML=minutes + "m";
+            document.getElementById("seconds").innerHTML= seconds +"s";
+            if (distance < 0){
+                clearInterval(x);
+                document.getElementById("count").innerHTML='Expired';
+            }
+
+        }, 1000);
+    </script>
+</body>
+</html>
